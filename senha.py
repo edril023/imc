@@ -22,9 +22,6 @@ class WhiteSquare(Widget):
         self.rect.pos = self.pos
         self.rect.size = self.size
 
-class ImageButton(Button):
-    pass
-
 class PlannerApp(App):
     def build(self):
         # Set the background color of the window to be transparent
@@ -47,28 +44,28 @@ class PlannerApp(App):
 
         # Create TextInput fields
         self.altura_input = TextInput(
-            hint_text="email ou nome de usuario", font_size=16, multiline=False, size_hint=(None, None),
+            hint_text="insira senha nova", font_size=16, multiline=False, size_hint=(None, None),
             size=(280, 40), foreground_color=(0, 0, 0, 1), cursor_color=(1, 1, 0, 1), background_color=(1, 0.8, 0.6, 1)
         )
         self.altura_input.pos_hint = {'center_x': 0.57, 'center_y': 1.1}
 
         self.peso_input = TextInput(
-            hint_text="senha", font_size=16, multiline=False, password=True, size_hint=(None, None),
+            hint_text="confirme a senha", font_size=16, multiline=False, password=True, size_hint=(None, None),
             size=(280, 40), foreground_color=(0, 0, 0, 1), cursor_color=(1, 1, 0, 1), background_color=(1, 0.8, 0.6, 1)
         )
         self.peso_input.pos_hint = {'center_x': 0.57, 'center_y': 0.9}
 
         # Create Button
-        self.submit_button = Button(
+        self.confirm_button = Button(
             text="confirmar", size_hint=(None, None), size=(150, 40),
-            color=(0.5, 0.5, 0.5, 1), background_color=(1, 0.8, 0.6, 1)
+            color=(0.5, 0.5, 0.5, 1), background_color=(0.87, 0.63, 0.87)  # Cor alterada para azul claro
         )
-        self.submit_button.pos_hint = {'center_x': 0.58, 'center_y': 0.6}
+        self.confirm_button.pos_hint = {'center_x': 0.59, 'center_y': 0.6}
 
         # Add TextInput fields and Button to the layout
         input_layout.add_widget(self.altura_input)
         input_layout.add_widget(self.peso_input)
-        input_layout.add_widget(self.submit_button)
+        input_layout.add_widget(self.confirm_button)
 
         # Add input_layout to white_square
         white_square.add_widget(input_layout)
